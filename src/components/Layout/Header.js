@@ -3,17 +3,17 @@ import React from "react";
 import classes from "./Header.module.css";
 import meals from "../../assets/img/meals.jpg";
 import HeaderCartButton from "./HeaderCartButton";
-const Header = () => {
+const Header = (props) => {
   return (
-    <>
-      <div className={classes.header}>
-        <h2>React Meals</h2>
-        <HeaderCartButton />
-      </div>
+    <React.Fragment>
+      <header className={classes.header}>
+        <h1>React Meals</h1>
+        <HeaderCartButton onClick={props.onShowCart} />
+      </header>
       <div className={classes["main-image"]}>
         <img src={meals} alt="meals" />
       </div>
-    </>
+    </React.Fragment>
   );
 };
 
